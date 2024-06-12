@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Confirmation</title>
+    <!-- Add any necessary CSS files here -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Order Confirmation</h1>
+
+        <!-- Display order details -->
+        <div class="order-details">
+            <p>Thank you for your order! Your order number is <strong>{{ order.id }}</strong>.</p>
+            <p><strong>Total Amount:</strong> Rs. {{ order.total_amount }}</p>
+            <p><strong>Date Placed:</strong> {{ order.date_place }}</p>
+        </div>
+
+        <!-- Display order items -->
+        <h2>Order Items:</h2>
+        <ul>
+            {% for item in order_items %}
+                <li>{{ item.quantity }} x {{ item.product.name }}</li>
+            {% endfor %}
+        </ul>
+
+        <!-- Add any other details or links, such as a link back to the home page -->
+        <a href="{% url 'home' %}" class="btn btn-primary">Back to Home</a>
+    </div>
+
+    <!-- Add any necessary JavaScript files here -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+.form {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 50px;
+  }
+  
+  .order-summary table {
+      width: 100%; /* Make the table take up the full width of the container */
+      border-collapse: collapse;
+      margin-bottom: 20px;
+  }
+  
+  .order-summary th,
+  .order-summary td {
+      padding: 10px; /* Add padding to table cells */
+      border: 1px solid #ddd; /* Add a light border to table cells */
+      text-align: left; /* Align text to the left */
+  }
+  
+  .order-summary th {
+      background-color: #f8f8f8; /* Light gray background for headers */
+      font-weight: bold; /* Make the headers bold */
+      text-align: center;
+  }
+  
+  .order-summary td{
+      text-align: center;
+  }
+  .order-summary td img {
+      width: 50px; /* Set the width of the product image */
+      height: auto; /* Maintain the aspect ratio */
+  }
+  
+  /* Hover effect for table rows */
+  .order-summary tbody tr:hover {
+      background-color: #f0f0f0; /* Light gray background on hover */
+  }
+  
+  /* Styling for the order total section */
+  .order-summary .order-total p {
+      margin: 0;
+      padding: 5px;
+      font-weight: bold; /* Make the text bold */
+  }
+  
+  .order-summary .order-total p span {
+      float: right; /* Align values to the right */
+  }
+  
+  /* Make buttons look more interactive */
+  .order-summary button {
+      display: inline-block;
+      background-color: #007bff; /* Bootstrap primary blue */
+      color: #fff; /* White text color */
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px; /* Rounded corners */
+      cursor: pointer;
+      font-size: 16px;
+  }
+  
+  .order-summary button:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+  }

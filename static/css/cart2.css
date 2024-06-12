@@ -1,0 +1,131 @@
+
+.shop-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.shop-container .shop-cart-section {
+    margin-left: 5cm;
+    border: 1px solid #ddd;
+}
+
+.shop-cart-section {
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.shop-product {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.shop-product-image img {
+    height: 200px;
+    width: auto;
+    border: 1px solid black;
+}
+
+.shop-product-details h2 {
+    margin: 0;
+    margin-right: 0.5cm;
+}
+
+.shop-product-details p {
+    margin: 0;
+}
+
+.shop-quantity-container {
+    display: flex;
+    margin-top: 10px;
+}
+
+.shop-quantity-container p {
+    margin-right: 10px;
+}
+
+.shop-quantity-container button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    font-size: 16px;
+}
+
+.shop-quantity-container span {
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+.shop-remove-price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.shop-remove-button {
+    padding: 5px 10px;
+    color: white;
+    background-color: #ff0000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.shop-remove-button:hover {
+    background-color: #cc0000;
+}
+
+.shop-remove-price-container p {
+    margin: 0;
+    margin-right: 10px;
+}
+
+.shop-summary {
+    flex: 1.2;
+    height: 30%;
+    margin-left: 30px;
+    margin-right: auto;
+    border: 2px solid #ddd;
+    padding: 20px;
+    width: 50%;
+}
+
+ul{
+  list-style:none;
+  padding:0px;
+}
+
+.shop-container .shop-summary h1 {
+    margin-left: 2px;
+}
+
+.shop-container .shop-summary a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.shop-summary .btn.btn-primary {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.shop-remove-price-container p {
+    font-weight: bold;
+    font-size: 20px;
+}

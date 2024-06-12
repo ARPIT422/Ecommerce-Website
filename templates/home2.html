@@ -1,0 +1,62 @@
+{%extends '1.html' %}
+{% load static %}
+{% block main-content %}
+<!-- 1st slider-->
+
+<div class='mx-3'>
+    {% for category in categories %}
+    <h1> {{ category.name }} <h1>
+            <div class="owl-carousel owl-theme" id='slider-{{ category.id }}'>
+                {% for product in category.products.all %}
+                <div class="item" sytlee>
+                    <a href="{% url 'product-details' product.id %}" class="btn"><img src="{{ product.image.url }}" alt="{{ product.name }}"
+                            height=200px><span class="fw-bold" style = "text-decoration: none;"> {{ product.name }} </span> <br> <span
+                            class="fs-5">Rs.{{ product.price }}
+                        </span> </a>
+                </div>
+                {% endfor %}
+            </div> <br><br> <hr>
+            {% endfor %}
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+
+{% for category in categories %}
+<script>
+    // Initialize slider for each category
+    $('#' + 'slider-{{ category.id}}').owlCarousel({
+        loop: true,
+        margin: 100,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+                nav: false,
+                autoplay: true,
+            },
+            600: {
+                items: 3,
+                nav: true,
+                autoplay: true,
+            },
+            1000: {
+                items: 6, // Number of items per slide can be adjusted
+                nav: true,
+                loop: true,
+                autoplay: true,
+            }
+        }
+    });
+
+    
+</script>
+{% endfor %}
+{% endblock %}

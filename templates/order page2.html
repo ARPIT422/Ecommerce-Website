@@ -1,0 +1,52 @@
+{%extends '1.html'%}
+{% load static %}
+{%block main-content%}
+<main>
+    <section class="order-summary">
+        <h2>Order Summary</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Serial No.</th>
+                    <th>Order id no.</th>
+                    <th>Product Image</th>
+                    <th>Product Name</th>
+                    <th>Order Date</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total Amount</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="orderItems">
+                <!-- Order items will be dynamically added here -->
+                <!-- Example order item -->
+                {% for order in orders %}
+                {% for item in order.items_list %}
+                <tr>
+                    <td>1</td>
+                    <td> {{order.id}}
+                    <td><img src="{{item.product.image.url}}" alt="Product 1" style="width: 200px; height: auto;"></td>
+                    <td>{{ item.product.name }} </td>
+                    <td>{{ order.date_place }}</td>
+                    <td>{{item.product.price}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td>{{order.total_amount}}</td>
+                    <td>Shipped</td>
+                </tr>
+                {% endfor %}
+                {% endfor %}
+                <!-- Add more order items as needed -->
+            </tbody>
+        </table>
+
+        <footer>
+            <p>&copy; 2024 Your E-commerce Website. All rights reserved.</p>
+        </footer>
+        </div>
+
+        <script>
+            // Add JavaScript code to handle interactivity
+            // such as updating the order summary, handling form submissions, etc.
+        </script>
+{% endblock %}

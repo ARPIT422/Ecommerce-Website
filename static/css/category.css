@@ -1,0 +1,65 @@
+.category-page {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+/* Style for the category grid */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-left:2cm;
+}
+
+/* Style for each category item */
+.category-grid-item {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Style for the category name */
+.category-grid-item h2 {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Style for the category name link */
+.category-grid-item h2 a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+/* Style for the category name link hover effect */
+.category-grid-item h2 a:hover {
+    text-decoration: underline;
+}
+
+/* Style for the category image */
+.category-grid-item img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Style for the category description */
+.category-grid-item p.category-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Style for the price */
+.category-grid-item p.price {
+    font-size: 16px;
+    color: #007BFF;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+

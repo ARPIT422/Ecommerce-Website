@@ -1,0 +1,110 @@
+.profilePage-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 4cm;
+}
+
+.profilePage-leftSection {
+    flex: inherit;
+    padding: 10px 0.5cm;
+}
+
+.profilePage-rightSection {
+    flex: 1;
+    padding: 0px 0cm;
+}
+
+.profilePage-section {
+    padding: 20px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profilePage-section h3 {
+    font-size: 20px; /* Adjust the size as desired */
+}
+
+/* List styles for the profile section */
+.profilePage-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.profilePage-section ul li {
+    padding: 5px 0;
+}
+
+/* Form styles */
+.profilePage-form fieldset {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.profilePage-form fieldset legend {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.profilePage-form legend {
+    font-size: 30px; /* Adjust the size as needed */
+    font-weight: bold;
+}
+
+.profilePage-form div {
+    margin-bottom: 10px;
+}
+
+.profilePage-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.profilePage-form input[type="submit"] {
+    display: inline-block;
+    padding: 10px 15px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.profilePage-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.profilePage-form input[type="radio"],
+.profilePage-form label[for="male"],
+.profilePage-form label[for="female"],
+.profilePage-form label[for="order"] {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+
+.profilePage-form label,
+.profilePage-form input[type="text"],
+.profilePage-form input[type="email"],
+.profilePage-form input[type="tel"],
+.profilePage-form input[type="date"],
+.profilePage-form input[type="file"],
+.profilePage-form textarea {
+    font-size: 16px; /* Increase font size as desired */
+}
+
+.profilePage-sectionContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.profilePage-sectionFields {
+    flex-grow: 1;
+    margin-right: 10px;
+}

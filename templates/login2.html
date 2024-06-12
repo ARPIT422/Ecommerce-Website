@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Page</title>
+    <style>
+        /* Style for the body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Style for the login container */
+        .login-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            width: 300px;
+            text-align: center;
+        }
+
+        /* Style for the input groups */
+        .input-group {
+            margin: 10px 0;
+            text-align: left;
+        }
+
+        /* Style for labels */
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Style for input fields */
+        .input-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        /* Style for the submit button */
+        .input-group input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .input-group input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="/login" method="POST">
+            {% csrf_token %}
+            <div class="input-group">
+                {{ form.username.label_tag }}
+                {{ form.username }}
+            </div>
+            <div class="input-group">
+                {{ form.password.label_tag }}
+                <!-- Password field with toggle button -->
+                <input type="password" name="password" id="password" placeholder="Password">
+                <button type="button" id="showPasswordBtn" onclick="togglePassword()">Show Password</button>
+            </div>
+            <div class="input-group">
+                <!-- Display the reCAPTCHA field -->
+                {{ form.captcha }}
+            </div>
+            <div class="input-group">
+                <input type="submit" value="Login">
+            </div>
+            <div class="signup-link">
+                <p>Don't have an account? <a href="/registration">Create one here</a>.</p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function togglePassword() {
+            var passwordField = document.getElementById("password");
+            var showPasswordBtn = document.getElementById("showPasswordBtn");
+
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                showPasswordBtn.textContent = "Hide Password";
+            } else {
+                passwordField.type = "password";
+                showPasswordBtn.textContent = "Show Password";
+            }
+        }
+    </script>
+</body>
+
+</html>

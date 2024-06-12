@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wishlist</title>
+    <style>
+    
+        .wishlist-container {
+            width: 60%;
+            margin: 20px auto;
+        }
+
+        .wishlist-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .wishlist-product-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        .wishlist-product-image {
+            width: 150px;
+            height: 150px;
+            margin-right: 20px;
+        }
+
+        .wishlist-product-details {
+            flex-grow: 1;
+        }
+
+        .wishlist-product-details h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .wishlist-product-details p {
+            margin: 5px 0;
+        }
+
+        .wishlist-product-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .wishlist-product-actions a {
+            text-decoration: none;
+            color: white;
+            background-color: #007BFF;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+
+        .wishlist-remove-wishlist {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="wishlist-container">
+        <h1 class="wishlist-header">Wishlist</h1>
+        {% for item in wishlist_items %}
+        <!-- Wishlist product item -->
+        <div class="wishlist-product-item">
+            <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="wishlist-product-image">
+            
+            <div class="wishlist-product-details">
+                <h2>{{ item.product.name }}</h2>
+                <p>{{ item.product.description }}</p>
+                <p>Price: Rs.{{ item.product.price }}</p>
+                
+                <div class="wishlist-product-actions">
+                    <a href="{% url 'add_from_wishlist_to_cart' item.id %}" class="wishlist-add-to-cart">Add to Cart</a>
+                    <a href="{%url 'remove_items_wishlist' item.id%}" class="wishlist-remove-wishlist">Remove from Wishlist</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+    <p>Your wishlist is empty.</p>
+        {% endfor %}
+    </div>
+        <!-- Repeat the wishlist-product-item block for each product in the wishlist -->
+        
+    </div>
+</body>
+</html>

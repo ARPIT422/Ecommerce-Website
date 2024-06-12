@@ -1,0 +1,80 @@
+{%extends '1.html' %}
+{% load static %}
+{% block main-content %}
+<!-- 1st slider-->
+<div class='mx-3'>
+    <h2> 1st slider <h2>
+            <div class="owl-carousel owl-theme" id='slider1'>
+                <div class="item">
+                    <a href="#" class="btn"><img src="{%static 'shopping images\Shirts\Shirt-1.jpg' %}" alt="jeans-1"
+                            height=200px ><span class="fw-bold"> Jeans-1</span> <br> <span class="fs-5"> Rs.300
+                        </span>
+                </div> </a>
+
+                <div class="item">
+                    <a href="#" class="btn"><img src="C:\Users\HP\Desktop\shopping images\Shirts\shirt_2.jpg"
+                            height=200px alt=><span class="fw-bold"> Jeans-2</span> <br> <span class="fs-5"> Rs.300
+                        </span>
+                </div> </a>
+
+
+                <div class="item">
+                    <a href="#" class="btn"><img src="C:\Users\HP\Desktop\shopping images\Shirts\shirt-3.jpg"
+                            height=200px alt=><span class="fw-bold"> Jeans-3</span> <br> <span class="fs-5"> Rs.300
+                        </span>
+                </div> </a>
+
+                <div class="item">
+                    <a href="#" class="btn"><img src="C:\Users\HP\Desktop\shopping images\Shirts\shirt-4.jpg"
+                            height=200px alt=><span class="fw-bold"> Jeans-4</span> <br> <span class="fs-5"> Rs.300
+                        </span>
+                </div> </a>
+
+                <div class="item">
+                    <a href="#" class="btn"><img src="C:\Users\HP\Desktop\shopping images\Shirts\shirt-5.jpg"
+                            height=200px alt=><span class="fw-bold"> Jeans-5</span> <br> <span class="fs-5"> Rs.300
+                        </span>
+                </div> </a>
+
+                <div class="item">
+                    <a href="#" class="btn"><img src="C:\Users\HP\Desktop\shopping images\Shirts\shirt-6.jpg"
+                            height=200px alt=><span class="fw-bold"> Jeans-6</span> <br> <span class="fs-5"> Rs.300
+                        </span>
+                </div> </a>
+            </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+
+    <script> type = "text/javascript">
+       $('#slider1, #slider2, #slider3').owlCarousel({
+    loop: true,
+    margin: 20,
+    responsiveClass: true,
+    responsive: {
+        0: {
+            items: 1,
+            nav: false,
+            autoplay: true,
+        },
+        600: {
+            items: 3,
+            nav: true,
+            autoplay: true,
+        },
+        1000: {
+            items: 10,
+            nav: true,
+            loop: true,
+            autoplay: true,
+        }
+    }
+})
+    </script>
+{% endblock %}

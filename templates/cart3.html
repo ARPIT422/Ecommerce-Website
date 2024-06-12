@@ -1,0 +1,60 @@
+{%extends '1.html'%}
+{%load static%}
+{%block main-content%}
+
+  <div class="shop-heading">
+    <center>
+        <h1 style="font-size: 40px">Shopping Cart</h1>
+    </center>
+
+    <div class="shop-container">
+        <div class="shop-cart-section">
+            <h1 style="padding: 0 20px">Cart</h1>
+            <div class="shop-products-wrapper">
+
+                {%for item in cart_items%}
+                <div class="shop-product">
+                    <div class="shop-product-image">
+                        <img src="{{item.product.image.url}}" alt="Image of a shirt" height="200px">
+                    </div>
+                    <div class="shop-product-details">
+                        <h2>{{item.product.name}}</h2>
+                        <p>{{item.product.description}}</p>
+
+                        <div class="shop-quantity-container">
+                            <p>Quantity:</p>
+                            <a href="{% url 'decrease_quantity' item.id %}" id="decrease-quantity">-</a>
+                            <span id="quantity">{{item.qunatity}}</span>
+                            <a href="{% url 'increase_quantity' item.id %}" id="increase-quantity">+</a>
+                        </div>
+                        <div class="shop-remove-price-container">
+                            <a href="{% url 'remove_items' item.id %}" class="shop-remove-button" id="remove-item">Remove</a>
+                            <a href="{% url 'move_to_wishlist' item.id %}" class="shop-remove-button" id="whislist-item">Move to Wishlist</a>
+                            <p>Price: Rs. {{item.product.price}}</p>
+            </div>
+          </div> 
+      </div>
+     <!--product-->
+    <hr>
+    {% empty %}
+    <p style = 'font-size:35px'>Your cart is empty.</p>
+{% endfor %}
+        </div> <!-- product wrapper-->
+      </div><!--cart section-->
+
+      {% if cart_items %}
+      <div class="shop-summary">
+        <h1>The Total Amount is:</h1>
+        <ul>
+            <li>Amount <span class="currency" style="float: right; margin-right: 5cm;">{{amount}}</span></li>
+            <li>Shipping charges <span class="currency" style="float: right; margin-right: 5cm;">Rs.40</span></li>
+            <hr>
+            <li>Total (includes all taxes) <span class="currency" style="float: right; margin-right: 5cm;">{{total_price}} </span></li>
+        </ul>
+        <!--<a href="{% url 'place_order' %}" class="shop-summary btn.btn-primary">Place Order</a>-->
+        <a href="{% url 'checkout' %}" class="shop-summary btn.btn-primary">Place Order</a>
+    </div><!-- shop-summary -->
+    {% endif %}
+</div> <!-- shop-container -->
+</div>
+{%endblock%}

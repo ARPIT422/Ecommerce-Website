@@ -1,0 +1,111 @@
+nav.bansal-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5cm;
+    border-bottom: 1px solid #ddd;
+}
+/* Styles for the first navbar */
+.bansal-first-navbar {
+    background-color: #d2b48c;
+}
+
+.bansal-first-navbar .bansal-navbar-left a {
+    font-size: 20px;
+    margin-right: 20px;
+    color: #000;
+}
+
+.bansal-first-navbar .bansal-navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.bansal-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.bansal-dropbtn {
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.bansal-dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.bansal-dropdown-content a {
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    color: #000;
+}
+
+.bansal-dropdown-content a:hover {
+    background-color: #f8f8f8;
+}
+
+.bansal-dropdown:hover .bansal-dropdown-content {
+    display: block;
+}
+
+/* Styles for the second navbar */
+.bansal-second-navbar {
+    height: 60px;
+
+}
+
+.bansal-second-navbar .bansal-navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.bansal-second-navbar .bansal-phone-number {
+    margin-left: 5px;
+}
+
+.bansal-second-navbar .bansal-navbar-middle h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.bansal-second-navbar .bansal-navbar-right a {
+    margin-left: 10px;
+}
+
+/* Styles for the third navbar */
+.bansal-third-navbar ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.bansal-third-navbar li {
+    margin-right: 0;
+}
+
+.bansal-third-navbar a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+    color: blue;
+}
+
+.bansal-third-navbar a:hover {
+    color: #007bff;
+}
+

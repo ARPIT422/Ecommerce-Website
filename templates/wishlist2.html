@@ -1,0 +1,29 @@
+{% extends '1.html' %}
+{% load static %}
+{%block main-content%}
+<div class="wishlist-container">
+    <h1 class="wishlist-header">Wishlist</h1>
+    {% for item in wishlist_items %}
+    <!-- Wishlist product item -->
+    <div class="wishlist-product-item">
+        <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="wishlist-product-image">
+        
+        <div class="wishlist-product-details">
+            <h2>{{ item.product.name }}</h2>
+            <p>{{ item.product.description }}</p>
+            <p>Price: Rs.{{ item.product.price }}</p>
+            
+            <div class="wishlist-product-actions">
+                <a href="{% url 'add_from_wishlist_to_cart' item.id %}" class="wishlist-add-to-cart">Add to Cart</a>
+                <a href="{%url 'remove_items_wishlist' item.id%}" class="wishlist-remove-wishlist">Remove from Wishlist</a>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+<p style = 'font-size:35px'>Your wishlist is empty.</p>
+    {% endfor %}
+</div>
+    <!-- Repeat the wishlist-product-item block for each product in the wishlist -->
+    
+</div>
+{% endblock %}

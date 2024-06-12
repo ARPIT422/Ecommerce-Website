@@ -1,0 +1,74 @@
+{%extends '1.html'%}
+{%load static%}
+{%block main-content%}
+    <div class="myContactPage-content">
+        <div class="myContactPage-imageContainer">
+            <img src="{%static 'contact image.jpg'%}" alt="Description of the image" class="myContactPage-contentImage">
+            <div class="myContactPage-overlayContent">
+                <p><b>Your text line 1</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="myContactPage-container">
+        <div class="myContactPage-leftSection">
+            <div class="myContactPage-section">
+                <h2>Contact Information</h2>
+                <p>Phone: +1-234-567-8901</p>
+                <p>Email: contact@example.com</p>
+            </div>
+
+            <div class="myContactPage-section">
+                <h2>Quick Links</h2>
+                <ul class="myContactPage-quickLinks">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Sale</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="myContactPage-rightSection">
+            <div class="myContactPage-section">
+                <h2>Contact Form</h2>
+                <form class="myContactPage-contactForm">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" placeholder="Enter your name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email" required>
+
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" name="phone" id="phone" placeholder="Enter your phone number">
+
+                    <label for="subject">Subject:</label>
+                    <input type="text" name="subject" id="subject" placeholder="Enter the subject">
+
+                    <label for="message">Message:</label>
+                    <textarea name="message" id="message" placeholder="Enter your message" rows="5" required></textarea>
+
+                    <label for="contact-method">Preferred Contact Method:</label>
+                    <select name="contact-method" id="contact-method">
+                        <option value="email">Email</option>
+                        <option value="phone">Phone Call</option>
+                    </select>
+
+                    <div class="checkbox">
+                        <label for="newsletter">
+                            <input type="checkbox" name="newsletter" id="newsletter">
+                            Subscribe to our newsletter
+                        </label>
+                    </div>
+
+                    <label for="file-upload">Upload an image (optional):</label>
+                    <input type="file" name="file-upload" id="file-upload" accept="image/*">
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

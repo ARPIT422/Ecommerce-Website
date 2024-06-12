@@ -1,0 +1,28 @@
+{%extends '1.html'%}
+{%load static%}
+{%block main-content%}
+<div class="list-group" style="font-size:25px; display: flex; margin-left:10px; gap:15px; margin-top:25px">
+    <a href="{% url 'category_view' category.name %}" class="list-group-item list-group-item-action {% if not brand %}active{% endif %}">
+        All Brands
+    </a>
+    {% for b in brands %}
+    <a href="{% url 'category_view' category.name %}?brand={{ b }}" class="list-group-item list-group-item-action {% if brand == b %}active{% endif %}">
+        {{ b }}
+    </a>
+    {% endfor %}
+</div>
+  <hr>
+<!-- Product grid -->
+    <div class="category-grid">
+        {% for product in products %}
+        <div class="category-grid-item">
+            <h2><a href="{{ product.url }}">{{ product.name }}</a></h2>
+            <a href="{% url 'product-details' product.id %}">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            </a>
+            <p class="category-description">{{ product.description }}</p>
+            <p class="price">Price: Rs.{{ product.price }}</p>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
