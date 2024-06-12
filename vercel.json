@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "builds": [{
         "src": "ecommerce/wsgi.py",
         "use": "@vercel/python",
@@ -9,6 +10,18 @@
         "use": "@vercel/static-build",
         "config": { "distDir": "staticfiles_build" }
     }],
+=======
+    "builds": [
+        {
+            "src": "ecommerce/wsgi.py",
+            "use": "@vercel/python",
+            "config": {
+                "maxLambdaSize": "100mb",
+                "runtime": "python3.12"
+            }
+        }
+    ],
+>>>>>>> a6d3fa9e18ceee7a1f3888d3ef309f99636682db
     "routes": [
         {
             "src": "/static/(.*)",
