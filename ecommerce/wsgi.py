@@ -16,4 +16,4 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ecommerce.settings')
 
 application = get_wsgi_application()
 
-app = make_wsgi_handler(application)
+app = application()
